@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <title>Title</title>
+    <link rel="stylesheet" href="css/slide.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="data.shoes.js"></script>
+
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: '微软雅黑';
+
+        }
+        header{
+            width: 100%;
+            height: 40px;
+            background-color: black;
+        }
+        .login{
+            width: 140px;
+            height: 40px;
+            float: right;
+            margin-right: 30px;
+        }
+        .login a{
+            line-height: 40px;
+            text-decoration: none;
+            color: white;
+            margin-left: 10px;
+            font-size: 12px;
+        }
+        .login a:hover{
+            color: red;
+        }
+        nav{
+            width:1100px;
+            height: 60px;
+            margin: 0 auto;
+
+        }
+        nav ul{
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li{
+            float: left;
+            list-style-type: none;
+        }
+        nav ul li a{
+            display: block;
+            margin: 0 40px;
+
+            line-height: 60px;
+            text-decoration: none;
+            text-align: center;
+            color: black;
+        }
+        #fir{
+            border-bottom: 2px solid black;
+            color: white;
+        }
+        nav ul li a:hover{
+            border-bottom: 2px solid black;
+            color: white;
+            line-height: 58px;
+        }
+        .banner{
+            width: 100%;
+
+        }
+        .controduce{
+            width: 530px;
+            margin: 40px auto;
+        }
+
+        .contain{
+            width: 100%;
+            height: 780px;
+        }
+        .list{
+            width: 1100px;
+            height: 780px;
+            margin: 0 auto;
+        }
+        .list_1{
+            width: 1248px;
+            height: 420px;
+            margin-top: 20px;
+
+        }
+        .lista{
+            width: 350px;
+            height: 420px;
+            float: left;
+            margin-left: 20px;
+        }
+        .lista span{
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        .lista img{
+            width: 350px;
+            -webkit-border-radius: 10px;
+        }
+        .lista h2{
+            margin-left: 20px;
+        }
+        .lista a{
+            color: black;
+            text-decoration: none;
+        }
+        .lista a:hover{
+            color: red;
+        }
+        .list_L{
+            width: 440px;
+            height: 2000px;
+            float: left;
+        }
+        .list_a{
+            width: 420px;
+            height: 420px;
+            margin-top: 20px;
+        }
+        .list_a span{
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        .list_a img{
+            width: 420px;
+            -webkit-border-radius: 10px;
+            height: 300px;
+        }
+        .list_a h2{
+            margin-left: 20px;
+        }
+        .list_a a{
+            color: black;
+            text-decoration: none;
+        }
+        .list_a a:hover{
+            color: red;
+        }
+        .lmg a:hover{
+            background-image: url("images/a4p.PNG");
+        }
+        .list_R{
+            width: 440px;
+            height: 2000px;
+            float: right;
+        }
+        .jordon{
+            width: 100%;
+            height: 574px;
+            margin-top: 40px;
+
+        }
+
+
+        .xinlang{
+            width: 138px;
+            height: 80px;
+            margin:20px auto;
+        }
+        .xinlang img{
+            height: 40px;
+            margin-top: 20px;
+        }
+        .sao{
+            width: 120px;
+            height: 160px;
+            margin: 40px auto 0 auto;
+        }
+        .sao img{
+            width: 120px;
+        }
+
+        .ck-slide{ width: 1440px; height: 583px; margin: 0 auto;}
+        .ck-slide ul.ck-slide-wrapper { height: 583px;}
+        #wel{
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            float: right;
+            font-size: 12px;
+            color: white;
+        }
+        .brank{
+            width: 1048px;
+            height: 120px;
+            margin: 40px auto 0 auto;
+        }
+        .brank img{
+            height: 120px;
+            float: left;
+            margin-left: 60px;
+        }
+        .con{
+            width: 1346px;
+            height: 1400px;
+            margin: 20px auto;
+        }
+        .con_L{
+            position:relative;
+            float: left;
+            clear: both;
+            margin: 0 auto;
+            max-width: 700px;
+            list-style: none;
+            text-align: center;
+            height: 450px;
+        }
+        .con_R{
+            position:relative;
+            float: right;
+            clear: both;
+            margin: 0 auto;
+            padding: 1em 0 4em;
+            max-width: 700px;
+            list-style: none;
+            text-align: center;
+            height: 470px;
+        }
+
+         figure {
+            position: relative;
+            float: left;
+            overflow: hidden;
+            margin: 10px 1%;
+            max-width: 802px;
+            max-height: 508px;
+            text-align: center;
+            cursor: pointer;
+        }
+        figure.effect-julia img {
+            max-width: none;
+            height: 400px;
+            -webkit-transition: opacity 1s, -webkit-transform 1s;
+            transition: opacity 1s, transform 1s;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        figure.effect-julia figcaption {
+            text-align:justify;
+        }
+        figure.effect-julia h2 {
+            color:#fff;
+            top:-350px;
+            left:60px;
+            font-size:40px;
+            position: relative;
+            padding: 0.5em 0;
+        }
+        figure.effect-julia p {
+            width:50%;
+            display: inline-block;
+            position:relative;
+            top:-330px;
+            left:60px;
+            margin-top:20px;
+            padding: 0.4em 1em;
+            background: rgba(255,255,255,0.9);
+            color: #2f3238;
+            text-transform: none;
+            font-weight:bold;
+            font-size:100%;
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            -webkit-transform: translate3d(-400px,0,0);
+            transform: translate3d(-400px,0,0);
+        }
+        figure.effect-julia p:first-child {
+            -webkit-transition-delay: 0.15s;
+            transition-delay: 0.15s;
+        }
+
+        figure.effect-julia p:nth-of-type(2) {
+            -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s;
+        }
+
+        figure.effect-julia p:nth-of-type(3) {
+            -webkit-transition-delay: 0.05s;
+            transition-delay: 0.05s;
+        }
+
+        figure.effect-julia:hover p:first-child {
+            -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+        }
+
+        figure.effect-julia:hover p:nth-of-type(2) {
+            -webkit-transition-delay: 0.05s;
+            transition-delay: 0.05s;
+        }
+
+        figure.effect-julia:hover p:nth-of-type(3) {
+            -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s;
+        }
+
+        figure.effect-julia:hover img {
+            opacity: 0.4;
+            -webkit-transform: scale3d(1.1,1.1,1);
+            transform: scale3d(1.1,1.1,1);
+        }
+
+        figure.effect-julia:hover p {
+            opacity: 1;
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+    </style>
+
+
+</head>
+<body>
+<header>
+    <img src="images/air0.jpg" id="logo" style="height: 30px;float: left;margin-left: 30px;margin-top: 5px;">
+
+    <div class="login">
+        <a href="login.html" id="user">登陆</a><a href="register.html">注册</a>
+    </div>
+    <div id="wel"></div>
+</header>
+<nav>
+    <ul>
+        <li><a href="#" >首页</a></li>
+        <li><a href="jordon.html">AJ</a></li>
+        <li><a href="tiger.html">Tiger</a></li>
+        <li><a href="#">Vans</a></li>
+        <li><a href="#">NB</a></li>
+        <li><a href="#">Adidas</a></li>
+        <li><a href="#">Nike</a></li>
+        <li><a href="#">Reebok</a></li>
+        <li><a href="#">Converce</a></li>
+
+    </ul>
+</nav>
+
+
+
+
+
+<!-- html -->
+<div class="ck-slide">
+    <ul class="ck-slide-wrapper">
+        <li>
+            <a href="javascript:"><img src="images/333.jpg" alt="" style="width: 100%;"></a>
+        </li>
+        <li style="display:none">
+            <a href="javascript:"><img src="images/pa.jpg" alt="" style="width: 100%;"></a>
+        </li>
+        <li style="display:none">
+            <a href="javascript:"><img src="images/111.jpg" alt="" style="width: 100%;"></a>
+        </li>
+        <li style="display:none">
+            <a href="javascript:"><img src="images/555.jpg" alt="" style="width: 100%;"></a>
+        </li>
+        <li style="display:none">
+            <a href="javascript:"><img src="images/666.jpg" alt="" style="width: 100%;"></a>
+        </li>
+    </ul>
+    <a href="javascript:;" class="ctrl-slide ck-prev">上一张</a> <a href="javascript:;" class="ctrl-slide ck-next">下一张</a>
+    <div class="ck-slidebox">
+        <div class="slideWrap">
+            <ul class="dot-wrap">
+                <li class="current"><em>1</em></li>
+                <li><em>2</em></li>
+                <li><em>3</em></li>
+                <li><em>4</em></li>
+                <li><em>5</em></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- js -->
+
+<script src="js/jquery-1.8.3.min.js"></script>
+<!--<script src="js/slide.min.js"></script>-->
+<script src="js/slide.js"></script>
+<script>
+    $('.ck-slide').ckSlide({
+        autoPlay: true,//默认为不自动播放，需要时请以此设置
+        dir: 'x',//默认效果淡隐淡出，x为水平移动，y 为垂直滚动
+        interval:2000//默认间隔2000毫秒
+
+    });
+</script>
+<!-- Demo end -->
+
+
+
+
+
+
+<style>
+    * { margin: 0; padding: 0;}
+    html, body { height: 100%; overflow-x: hidden;}
+    .main h1 { width: 100%; margin: 40px auto; font: 32px "Microsoft Yahei"; text-align:center;}
+    /*注释*/
+    .zhushi{width:900px;margin: 30px auto; }/*注释*/
+    .zhushi p{ line-height:24px; ;font-size:16px;text-align:left;}
+</style>
+<div class="brank">
+    <a href="jordon.html"> <img src="images/air0.jpg"></a>
+    <a href="tiger.html"> <img src="images/tiger.png"></a>
+    <a href="#"><img src="images/vans.jpg"></a>
+    <a href="#"><img src="images/nb.jpg"></a>
+</div>
+<div class="brank">
+    <a href="#"> <img src="images/ad.PNG"></a>
+    <a href="#"> <img src="images/nike.jpg"></a>
+    <a href="#"><img src="images/ruibu1.PNG"></a>
+    <a href="#"><img src="images/kw.jpg"></a>
+</div>
+
+
+
+
+<!--<div class="xinlang">
+    <img src="images/lo.PNG" >
+    <img src="images/line.PNG">
+    <a href="#"> <img src="images/xinl.PNG"></a>
+</div>-->
+
+<div class="jordon">
+
+    <img src="images/444.jpg" style="width: 100%; " >
+
+</div>
+
+
+<div class="con">
+    <img src="images/back1.jpg">
+    <div class="con_L">
+        <figure class="effect-julia">
+            <img src="images/a11p.PNG" alt="img21"/>
+            <figcaption>
+                <h2><span id="name_0"></span></h2>
+                <div>
+                    <p >Julia dances in the deep dark</p>
+                    <p>She loves the smell of the ocean</p>
+                    <p>And dives into the morning light</p>
+                </div>
+                <a href="#">View more</a>
+            </figcaption>
+        </figure>
+        <img src="images/back2.jpg">
+
+
+    </div>
+    <div class="con_R">
+
+        <figure class="effect-julia">
+            <img src="images/a4p.PNG" alt="img21"/>
+            <figcaption>
+                <h2>Passionate Julia</h2>
+                <div>
+                    <p>Julia dances in the deep dark</p>
+                    <p>She loves the smell of the ocean</p>
+                    <p>And dives into the morning light</p>
+                </div>
+
+            </figcaption>
+        </figure>
+        <img src="images/back3.jpg">
+
+    </div>
+    <div class="con_L">
+        <figure class="effect-julia">
+            <img src="images/a5pp.PNG" alt="img21"/>
+            <figcaption>
+                <h2>Passionate Julia</h2>
+                <div>
+                    <p>Julia dances in the deep dark</p>
+                    <p>She loves the smell of the ocean</p>
+                    <p>And dives into the morning light</p>
+                </div>
+            </figcaption>
+        </figure>
+
+    </div>
+</div>
+<div class="jordon">
+
+    <img src="images/mtiger.jpg" style="width: 100%; " >
+
+</div>
+
+
+<div class="con">
+    <img src="images/gui11.jpg">
+    <div class="con_L">
+        <figure class="effect-julia">
+            <img src="images/gui1.jpg" alt="img21"/>
+            <figcaption>
+                <h2>Passionate <span>Julia</span></h2>
+                <div>
+                    <p>Julia dances in the deep dark</p>
+                    <p>She loves the smell of the ocean</p>
+                    <p>And dives into the morning light</p>
+                </div>
+                <a href="#">View more</a>
+            </figcaption>
+        </figure>
+        <img src="images/gui12.jpg">
+
+    </div>
+
+    <div class="con_R">
+        <figure class="effect-julia">
+            <img src="images/gui2.jpg" alt="img21"/>
+            <figcaption>
+                <h2>Passionate <span>Julia</span></h2>
+                <div>
+                    <p>Julia dances in the deep dark</p>
+                    <p>She loves the smell of the ocean</p>
+                    <p>And dives into the morning light</p>
+                </div>
+
+            </figcaption>
+        </figure>
+        <img src="images/gui13.jpg">
+    </div>
+    <div class="con_L">
+        <figure class="effect-julia">
+            <img src="images/gui3.jpg" alt="img21"/>
+            <figcaption>
+                <h2>Passionate <span>Julia</span></h2>
+                <div>
+                    <p>Julia dances in the deep dark</p>
+                    <p>She loves the smell of the ocean</p>
+                    <p>And dives into the morning light</p>
+                </div>
+                <a href="#">View more</a>
+            </figcaption>
+        </figure>
+
+    </div>
+</div>
+<div class="jordon">
+
+    <img src="images/v1.jpg" style="width: 100%; " >
+
+</div>
+
+
+<div class="con">
+    <img src="images/van11.jpg">
+    <div class="con_L">
+        <figure class="effect-julia">
+            <img src="images/van1.jpg" alt="img21"/>
+            <figcaption>
+                <h2>Passionate <span>Julia</span></h2>
+                <div>
+                    <p>Julia dances in the deep dark</p>
+                    <p>She loves the smell of the ocean</p>
+                    <p>And dives into the morning light</p>
+                </div>
+                <a href="#">View more</a>
+            </figcaption>
+        </figure>
+        <img src="images/van12.jpg">
+
+    </div>
+    <div class="con_R">
+        <figure class="effect-julia">
+            <img src="images/van4.jpg" alt="img21"/>
+            <figcaption>
+                <h2>Passionate <span>Julia</span></h2>
+                <div>
+                    <p>Julia dances in the deep dark</p>
+                    <p>She loves the smell of the ocean</p>
+                    <p>And dives into the morning light</p>
+                </div>
+
+            </figcaption>
+        </figure>
+        <img src="images/van12.jpg">
+    </div>
+    <div class="con_L">
+        <figure class="effect-julia">
+            <img src="images/van5.jpg" alt="img21"/>
+            <figcaption>
+                <h2>Passionate <span>Julia</span></h2>
+                <div>
+                    <p>Julia dances in the deep dark</p>
+                    <p>She loves the smell of the ocean</p>
+                    <p>And dives into the morning light</p>
+                </div>
+                <a href="#">View more</a>
+            </figcaption>
+        </figure>
+
+    </div>
+</div>
+
+<div class="jordon">
+
+    <img src="images/newbanlances.jpg" style="width: 100%; " >
+
+</div>
+
+
+<div class="con">
+    <img src="images/new12.jpg">
+    <div class="con_L">
+        <figure class="effect-julia">
+            <img src="images/new1.jpg" alt="img21"/>
+            <figcaption>
+                <h2>Passionate <span>Julia</span></h2>
+                <div>
+                    <p>Julia dances in the deep dark</p>
+                    <p>She loves the smell of the ocean</p>
+                    <p>And dives into the morning light</p>
+                </div>
+                <a href="#">View more</a>
+            </figcaption>
+        </figure>
+        <img src="images/new11.jpg">
+
+    </div>
+    <div class="con_R">
+        <figure class="effect-julia">
+            <img src="images/new2.jpg" alt="img21"/>
+            <figcaption>
+                <h2>Passionate <span>Julia</span></h2>
+                <div>
+                    <p>Julia dances in the deep dark</p>
+                    <p>She loves the smell of the ocean</p>
+                    <p>And dives into the morning light</p>
+                </div>
+
+            </figcaption>
+        </figure>
+        <img src="images/new11.jpg">
+    </div>
+    <div class="con_L">
+        <figure class="effect-julia">
+            <img src="images/new4.jpg" alt="img21"/>
+            <figcaption>
+                <h2>Passionate <span>Julia</span></h2>
+                <div>
+                    <p>Julia dances in the deep dark</p>
+                    <p>She loves the smell of the ocean</p>
+                    <p>And dives into the morning light</p>
+                </div>
+                <a href="#">View more</a>
+            </figcaption>
+        </figure>
+
+    </div>
+</div>
+
+<!--<div class="list_L">
+
+    <div class="list_a" id="ia">
+         <img src="images/a1.PNG" id="mg">
+        <span id="no"></span>
+        <h2><a href="#" id="name"></a></h2>
+        <span id="inform"></span>
+
+    </div>
+    <div class="list_a" id="ib">
+        <a href="#"> <img src="images/aj44p.PNG"></a>
+        <span>408452</span>
+        <a href="#"><h2>AIR JORDON 4</h2></a>
+        <span>Air Jordan 4 Alternate </span>
+    </div>
+    <div class="list_a" id="ic">
+        <a href="#"> <img src="images/a5p.PNG"></a>
+        <span>440888</span>
+        <a href="#"><h2>AIR JORDON 5</h2></a>
+        <span>Air Jordan 5 Olympic </span>
+    </div>
+    <div class="list_a" id="id">
+        <a href="#"> <img src="images/aa6p.PNG"></a>
+        <span>384664</span>
+        <a href="#"><h2>AIR JORDON 6</h2></a>
+        <span>Air Jordan 6 Metallic  </span>
+    </div>
+    <div class="list_a" id="ie">
+        <a href="#"> <img src="images/a111p.PNG"></a>
+        <span>384664</span>
+        <a href="#"><h2>AIR JORDON 11</h2></a>
+        <span>Air Jordan 11 Metallic  </span>
+    </div>
+
+
+
+
+</div>
+<div class="list_R">
+    <div class="list_a" id="if">
+        <a href="#"> <img src="images/aa1p.PNG" ></a>
+        <span>554724</span>
+        <a href="#"><h2>AIR JORDON 1</h2></a>
+        <span>Air Jordan 1 Mid  </span>
+    </div>
+    <div class="list_a" id="ig">
+        <a href="#"> <img src="images/a4p.PNG"></a>
+        <span>408452</span>
+        <a href="#"><h2>AIR JORDON 4</h2></a>
+        <span>Air Jordan 4 OG </span>
+    </div>
+    <div class="list_a" id="ih">
+        <a href="#"> <img src="images/a5pp.PNG"></a>
+        <span>846316</span>
+        <a href="#"> <h2>AIR JORDON 5</h2></a>
+        <span>Air Jordan 5 Low  </span>
+    </div>
+    <div class="list_a" id="ii">
+        <a href="#"> <img src="images/a6pp.PNG"></a>
+        <span>408452</span>
+        <a href="#"><h2>AIR JORDON 6</h2></a>
+        <span>Air Jordan 6 Maroon </span>
+    </div>
+    <div class="list_a" id="ij">
+        <a href="#"> <img src="images/a11pp.PNG"></a>
+        <span>384664</span>
+        <a href="#"><h2>AIR JORDON 11</h2></a>
+        <span>Air Jordan 11 Metallic  </span>
+    </div>
+
+</div>
+
+</div>-->
+
+
+
+<footer>
+
+
+</footer>
+
+
+
+<script>
+    document.getElementById('user').innerText=
+        Cookies.get('user');
+    if(Cookies.get('user')){
+        document.getElementById('wel').innerText='欢迎你';
+//            '<p class="q">欢迎</p>';
+    }
+    /*document.getElementById('name').textContent=shoes[0].name;
+     document.getElementById('no').textContent=shoes[0].no;
+     document.getElementById('inform').textContent=shoes[0].inform;
+
+     document.getElementById('namea').textContent=shoes[1].name;
+     document.getElementById('noa').textContent=shoes[1].no;
+     document.getElementById('informa').textContent=shoes[1].inform;
+
+     document.getElementById('nameb').textContent=shoes[2].name;
+     document.getElementById('nob').textContent=shoes[2].no;
+     document.getElementById('informb').textContent=shoes[2].inform;
+
+     document.getElementById('namec').textContent=shoes[3].name;
+     document.getElementById('noc').textContent=shoes[3].no;
+     document.getElementById('informc').textContent=shoes[3].inform;
+
+     document.getElementById('named').textContent=shoes[4].name;
+     document.getElementById('nod').textContent=shoes[4].no;
+     document.getElementById('informd').textContent=shoes[4].inform;
+
+     document.getElementById('namee').textContent=shoes[5].name;
+     document.getElementById('noe').textContent=shoes[5].no;
+     document.getElementById('informe').textContent=shoes[5].inform;*/
+    for (var i=0;i<shoes.length;i++){
+        document.getElementById('name_'+i).innerText=shoes[i].name;
+        document.getElementById('no_'+i).innerText=shoes[i].no;
+        document.getElementById('inform_'+i).innerText=shoes[i].inform;
+    }
+
+
+</script>
+<script>
+
+</script>
+</body>
+</html>
+

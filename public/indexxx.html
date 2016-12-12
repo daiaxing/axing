@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/slide.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <style>
+        * { margin: 0; padding: 0;}
+        html, body { height: 100%; overflow-x: hidden;}
+        .main h1 { width: 100%; margin: 40px auto; font: 32px "Microsoft Yahei"; text-align:center;}
+        /*注释*/
+        .zhushi{width:900px;margin: 30px auto; }/*注释*/
+        .zhushi p{ line-height:24px; ;font-size:16px;text-align:left;}
+    </style>
+    <style>
+        body{
+            font-family: 黑体;
+        }
+        .modal-header{
+            height: 20px;
+            background-color:darkorange;
+        }
+
+        .nav-tabs li{
+            margin-left:280px;
+        }
+        .nav-tabs li a{
+            color:darkorange;
+        }
+        .img-rounded{
+            width: 30px;
+            margin-top: -20px;
+        }
+        .navbar-nav{
+            float: right;
+            margin-top: -10px;
+            margin-bottom: 0;
+
+        }
+        .dropdown{
+            list-style-type: none;
+        }
+        .dropdown-toggle{
+            font-size: 12px;
+            margin-top: -20px;
+            color: white;
+
+        }
+        .space{
+            width: 1000px;
+            height: 40px;
+        }
+        .header-R{
+            width: 80px;
+            float: left;
+        }
+        .lr{
+            float: right;;
+            height: 20px;
+            margin-top: -8px;
+        }
+        .login{
+            float: left;
+            margin-right: 10px;
+            font-size: 12px;
+
+        }
+        .login a{
+            color: white;
+
+        }
+        .register{
+            float: right;
+            font-size: 12px;
+
+        }
+        .register a{
+            color: white;
+        }
+        .dropdown-menu{
+            width: 40px;
+        }
+        .ck-slide{
+            overflow-y:hidden;
+        }
+        .con{
+            width: 1248px;
+            height: 1250px;
+            margin: 40px auto;
+        }
+        .example{
+            width: 1248px;
+            height: 400px;
+        }
+        .tab{
+            width: 1016px;
+            height: 60px;
+            margin: 80px auto 20px auto;
+        }
+        .table{
+            width: 1016px;
+            height: 1500px;
+            border: 1px solid #e6e6e6;
+        }
+        .in{
+            width: 120px;
+            height: 40px;
+            background-color: cornflowerblue;
+            color: white;
+        }
+        .xuanzhong{
+            width: 120px;
+            height: 40px;
+            color: white;
+            background-color: orange;
+        }
+
+        figure {
+            position: relative;
+            float: left;
+            overflow: hidden;
+
+            max-width: 800px;
+            max-height: 320px;
+            text-align: center;
+            cursor: pointer;
+            color: white;
+            margin-left: 120px;
+        }
+
+
+        figure.effect-dexter {
+            background: -webkit-linear-gradient(top, rgba(37,141,200,1) 0%, rgba(104,60,19,1) 100%);
+            background: linear-gradient(to bottom, rgba(37,141,200,1) 0%,rgba(104,60,19,1) 100%);
+        }
+
+        figure.effect-dexter img {
+            -webkit-transition: opacity 0.35s;
+            transition: opacity 0.35s;
+        }
+
+        figure.effect-dexter:hover img {
+            opacity: 0.4;
+        }
+
+        figure.effect-dexter figcaption::after {
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            left: 30px;
+            height: -webkit-calc(50% - 30px);
+            height: calc(50% - 30px);
+            border: 7px solid #fff;
+            content: '';
+            -webkit-transition: -webkit-transform 0.35s;
+            transition: transform 0.35s;
+            -webkit-transform: translate3d(0,-100%,0);
+            transform: translate3d(0,-100%,0);
+        }
+
+        figure.effect-dexter:hover figcaption::after {
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+
+        figure.effect-dexter figcaption {
+            padding: 3em;
+            text-align: left;
+        }
+        figure.effect-dexter h2 {
+            position: absolute;
+            right: 60px;
+            bottom: 160px;
+            left: 60px;
+            opacity: 0;
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            -webkit-transform: translate3d(0,-100px,0);
+            transform: translate3d(0,-100px,0);
+        }
+
+        figure.effect-dexter:hover h2 {
+            opacity: 1;
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+
+        figure.effect-dexter p {
+            position: absolute;
+            right: 60px;
+            bottom: 76px;
+            left: 60px;
+            opacity: 0;
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            -webkit-transform: translate3d(0,-100px,0);
+            transform: translate3d(0,-100px,0);
+        }
+
+        figure.effect-dexter:hover p {
+            opacity: 1;
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+        figure.effect-dexter span {
+            position: absolute;
+            right: 60px;
+            bottom: 67px;
+            left: 60px;
+            opacity: 0;
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            -webkit-transform: translate3d(0,-100px,0);
+            transform: translate3d(0,-100px,0);
+        }
+
+        figure.effect-dexter:hover span {
+            opacity: 1;
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+        figure.effect-dexter h5 {
+            position: absolute;
+            right: 60px;
+            bottom: 40px;
+            left: 60px;
+            opacity: 0;
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            -webkit-transform: translate3d(0,-100px,0);
+            transform: translate3d(0,-100px,0);
+        }
+
+        figure.effect-dexter:hover h5 {
+            opacity: 1;
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+        figure.effect-dexter em {
+            position: absolute;
+            right: 60px;
+            bottom: 110px;
+            left: 60px;
+            opacity: 0;
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            -webkit-transform: translate3d(0,-100px,0);
+            transform: translate3d(0,-100px,0);
+        }
+
+        figure.effect-dexter:hover em {
+            opacity: 1;
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+
+    </style>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/easyResponsiveTabs.js"></script>
+    <!--<script type="text/javascript">
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true   // 100% fit in a container
+            });
+        });
+    </script>-->
+
+</head>
+<body>
+<i class="icon-map-marker icon-white"></i>
+
+<div class="modal-header">
+    <div class="header-R">
+        <ul class="navbar-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">区域<b class="caret"></b> </a>
+                <ul class="dropdown-menu ">
+                    <li><a href="#">东部</a></li>
+                    <li><a href="#">东南</a></li>
+                    <li><a href="#">南部</a></li>
+                    <li><a href="#">西南</a></li>
+                    <li><a href="#">西部</a></li>
+                    <li><a href="#">西北</a></li>
+                    <li><a href="#">北部</a></li>
+                    <li><a href="#">东北</a></li>
+                    <!--<li class="divider"></li>
+                    <li><a href="#">分离的链接</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">另一个分离的链接</a></li>-->
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="lr">
+        <div class="login"><a href="login.html">登陆</a></div>
+        <div class="register"><a href="register.html">注册</a></div>
+    </div>
+</div>
+
+<div class="navbar" >
+    <ul class="nav nav-tabs">
+        <li><a href="#">到处吃</a></li>
+        <li><a href="#">到处游山</a></li>
+        <li><a href="#">到处玩水</a></li>
+    </ul>
+</div>
+
+<div class="ck-slide" style="height: 680px;margin-top: -27px">
+    <ul class="ck-slide-wrapper">
+        <li>
+            <a href="javascript:"><img src="images/bgg.jpg" alt="" style="width: 100%;"></a>
+        </li>
+        <li style="display:none">
+            <a href="javascript:"><img src="images/ban1.jpg" alt="" style="width: 100%;"></a>
+        </li>
+
+    </ul>
+    <a href="javascript:;" class="ctrl-slide ck-prev">上一张</a> <a href="javascript:;" class="ctrl-slide ck-next">下一张</a>
+    <div class="ck-slidebox">
+        <div class="slideWrap">
+            <ul class="dot-wrap">
+                <li class="current"><em>1</em></li>
+                <li><em>2</em></li>
+                <li><em>3</em></li>
+                <li><em>4</em></li>
+                <li><em>5</em></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- js -->
+
+<script src="js/jquery-1.8.3.min.js"></script>
+<!--<script src="js/slide.min.js"></script>-->
+<script src="js/slide.min.js"></script>
+<script>
+    $('.ck-slide').ckSlide({
+        autoPlay: true,//默认为不自动播放，需要时请以此设置
+        dir: 'x',//默认效果淡隐淡出，x为水平移动，y 为垂直滚动
+        interval:2000//默认间隔2000毫秒
+    });
+</script>
+<!--<div class="tab">
+    <ul>
+        <li ><a href="#" class="xuanzhong yanse">推荐美食</a> </li>
+        <li><a href="#" class="xuanzhong">热门美食</a> </li>
+        <li><a href="#" class="xuanzhong">热门网站</a> </li>
+    </ul>
+    <input class="xuanzhong in" type="button" value="推荐美食"/>
+    <input type="button" class="in" value="热门美食"/>
+    <input type="button" class="in" value="热门网站"/>
+
+</div>-->
+<div class="title" style="width: 100% ; background-color: aliceblue;padding-bottom: 20px;padding-top: 15px;margin-top: 80px;">
+<p class="text-center" ><h1 style="color: orange;">推荐美食</h1></p>
+</div>
+<div class="con" style="display:block">
+
+
+
+    <div class="example">
+        <div class="space"></div>
+
+        <figure class="effect-dexter">
+            <a id="top0"><img src="" alt="img19" id="pic_0"/></a>
+            <figcaption>
+                <h2 id="name_0"></h2>
+                <p id="area_0"></p>
+                <span id="taste_0"></span>
+                <h5 id="propose_0"></h5>
+                <em id="intro_0"></em>
+            </figcaption>
+        </figure>
+        <figure class="effect-dexter">
+            <a id="top1"><img src="" alt="img19" id="pic_1"/></a>
+            <figcaption>
+                <h2 id="name_1"></h2>
+                <p id="area_1"></p>
+                <span id="taste_1"></span>
+                <h5 id="propose_1"></h5>
+                <em id="intro_1"></em>
+            </figcaption>
+        </figure>
+    </div>
+    <div class="example">
+        <div class="space"></div>
+
+
+        <figure class="effect-dexter">
+            <a id="top2"><img src="" alt="img19" id="pic_2"/></a>
+            <figcaption>
+                <h2 id="name_2"></h2>
+                <p id="area_2"></p>
+                <span id="taste_2"></span>
+                <h5 id="propose_2"></h5>
+                <em id="intro_2"></em>
+            </figcaption>
+        </figure>
+        <figure class="effect-dexter">
+            <a id="top3"><img src="" alt="img19" id="pic_3"/></a>
+            <figcaption>
+                <h2 id="name_3"></h2>
+                <p id="area_3"></p>
+                <span id="taste_3"></span>
+                <h5 id="propose_3"></h5>
+                <em id="intro_3"></em>
+            </figcaption>
+        </figure>
+    </div>
+    <div class="example">
+        <div class="space"></div>
+
+        <figure class="effect-dexter">
+            <a id="top4"><img src="" alt="img19" id="pic_4"/></a>
+            <figcaption>
+                <h2 id="name_4"></h2>
+                <p id="area_4"></p>
+                <span id="taste_4"></span>
+                <h5 id="propose_4"></h5>
+                <em id="intro_4"></em>
+            </figcaption>
+        </figure>
+        <figure class="effect-dexter">
+            <a id="top5"><img src="" alt="img19" id="pic_5"/></a>
+            <figcaption>
+                <h2 id="name_5"></h2>
+                <p id="area_5"></p>
+                <span id="taste_5"></span>
+                <h5 id="propose_5"></h5>
+                <em id="intro_5"></em>
+            </figcaption>
+        </figure>
+    </div>
+</div>
+<div class="title" style="width: 100% ; background-color: aliceblue;padding-bottom: 20px;padding-top: 15px;margin-top: 10px;">
+    <p class="text-center" ><h1 style="color: orange;">热门美食</h1></p>
+</div>
+<div class="con">
+
+
+
+    <div class="example">
+        <div class="space"></div>
+
+        <figure class="effect-dexter">
+            <a id="top_0"><img src="" alt="img19" id="pic0"/></a>
+            <figcaption>
+                <h2 id="name0"></h2>
+                <p id="area0"></p>
+                <span id="taste0"></span>
+                <h5 id="propose0"></h5>
+                <em id="intro0"></em>
+            </figcaption>
+        </figure>
+        <figure class="effect-dexter">
+            <a id="top_1"><img src="" alt="img19" id="pic1"/></a>
+            <figcaption>
+                <h2 id="name1"></h2>
+                <p id="area1"></p>
+                <span id="taste1"></span>
+                <h5 id="propose1"></h5>
+                <em id="intro1"></em>
+            </figcaption>
+        </figure>
+    </div>
+    <div class="example">
+        <div class="space"></div>
+
+
+        <figure class="effect-dexter">
+            <a id="top_2"><img src="" alt="img19" id="pic2"/></a>
+            <figcaption>
+                <h2 id="name2"></h2>
+                <p id="area2"></p>
+                <span id="taste2"></span>
+                <h5 id="propose2"></h5>
+                <em id="intro2"></em>
+            </figcaption>
+        </figure>
+        <figure class="effect-dexter">
+            <a id="top_3"><img src="" alt="img19" id="pic3"/></a>
+            <figcaption>
+                <h2 id="name3"></h2>
+                <p id="area3"></p>
+                <span id="taste3"></span>
+                <h5 id="propose3"></h5>
+                <em id="intro3"></em>
+            </figcaption>
+        </figure>
+    </div>
+    <div class="example">
+        <div class="space"></div>
+
+        <figure class="effect-dexter">
+            <a id="top_4"><img src="" alt="img19" id="pic4"/></a>
+            <figcaption>
+                <h2 id="name4"></h2>
+                <p id="area4"></p>
+                <span id="taste4"></span>
+                <h5 id="propose4"></h5>
+                <em id="intro4"></em>
+            </figcaption>
+        </figure>
+        <figure class="effect-dexter">
+            <a id="top_5"><img src="" alt="img19" id="pic5"/></a>
+            <figcaption>
+                <h2 id="name5"></h2>
+                <p id="area5"></p>
+                <span id="taste5"></span>
+                <h5 id="propose5"></h5>
+                <em id="intro5"></em>
+            </figcaption>
+        </figure>
+    </div>
+</div>
+<!--推荐美食-->
+<script>
+    $(function(){
+        $.ajax({
+            url:'wad/recommand/6',
+            method:'get',
+            dataType:'json',
+            success:function(data,status,xhr){
+                console.log(data);
+                for(var i=0;i<data.length;i++){
+                    $('#name_'+i).text(data[i].name);
+                    $('#alias_'+i).text(data[i].alias);
+                    $('#taste_'+i).text(data[i].taste);
+                    $('#area_'+i).text(data[i].area);
+                    $('#propose_'+i).text(data[i].propose);
+                    $('#intro_'+i).text(data[i].intro);
+                    $('#top'+i).attr('href','index_a.html?id='+data[i].id);
+                    $('#pic_'+i).attr('src',data[i].pic_1);
+                }
+            },
+            error:function(xhr,status,data){
+                console.log(data);
+                alert('服务器错误');
+            }
+        })
+    })
+</script><!--推荐美食-->
+<script>
+    $(function(){
+        $.ajax({
+            url:'wad/popular/6',
+            method:'get',
+            dataType:'json',
+            success:function(data,status,xhr){
+                console.log(data);
+                for(var i=0;i<data.length;i++){
+                    $('#name'+i).text(data[i].name);
+                    $('#alias'+i).text(data[i].alias);
+                    $('#taste'+i).text(data[i].taste);
+                    $('#area'+i).text(data[i].area);
+                    $('#propose'+i).text(data[i].propose);
+                    $('#intro'+i).text(data[i].intro);
+                    $('#top_'+i).attr('href','index_a.html?id='+data[i].id);
+                    $('#pic'+i).attr('src',data[i].pic_1);
+                }
+            },
+            error:function(xhr,status,data){
+                console.log(data);
+                alert('服务器错误');
+            }
+        })
+    })
+</script>
+<script type="text/javascript">
+    window.onload=function()
+    {
+        var oinput=document.getElementsByClassName('in');
+        var odiv=document.getElementsByClassName('con');
+        var i=0;
+        for(i=0; i<oinput.length; i++)
+        {
+            oinput[i].index=i ;  //索引值
+            oinput[i].onclick=function()
+            {
+                for(i=0; i<oinput.length; i++)
+                {
+
+                    oinput[i].className='';
+                    odiv[i].style.display='none';
+
+                }
+                odiv[this.index].style.display='block';
+                this.className='xuanzhong';
+
+
+
+            }
+
+
+        }
+
+
+    }
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
